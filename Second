@@ -1,0 +1,30 @@
+#Modify the previous program (Write a program that asks the user for a number n and prints the sum of the numbers 1 to n)
+#such that only
+# multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
+
+def Checknumber():
+    global Number
+    Number=int(input("Give integer more than 0 and less than 18:\n"))
+    if Number >17:
+        print("Podałeś zbyt duży number")
+    else:
+        Automaticsum(Number)
+
+def isDivided(Number,Division):
+    if Number%Division==0:
+        return True
+    else:
+        False
+
+def Automaticsum(Number):
+    if Number== 3:
+        return 3
+    elif bool(isDivided(Number, Divider1)) | bool(isDivided(Number, Divider2)):
+        return Number+Automaticsum(Number-1)
+    else:
+        return Automaticsum(Number-1)
+
+Divider1=3
+Divider2=5
+Checknumber()
+print("Suma to %d" % (Automaticsum(Number)))
