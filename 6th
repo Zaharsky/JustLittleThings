@@ -1,0 +1,20 @@
+#Write a guessing game where the user has to guess a secret number. After every guess the program tells
+# the user whether their number was too large or too small. At the end the number of tries needed should be printed.
+# It counts only as one try if they input the same number multiple times consecutively.
+
+def Check(InNumber):
+    if InNumber<Number:
+        print("Podana liczba %d jest za mała" % (InNumber))
+    else:
+        print("Podana liczba %d jest za duża" % (InNumber))
+
+import random
+TryNumber=0
+Number=random.randint(1,100)
+InNumber=int(input("Podaj liczbę od 1 do 1000:\n"))
+while Number!=InNumber:
+    TryNumber+=1
+    Check(InNumber)
+    InNumber = int(input("Podaj nową liczbę różną od %d \n" % (InNumber)))
+TryNumber+=1
+print("Zgadłeś! Wylosowana liczba to %d!\nNa odgadnięcie wykorzystałeś %d prób" % (InNumber,TryNumber))
