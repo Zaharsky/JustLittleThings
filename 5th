@@ -1,0 +1,13 @@
+# Write a function that takes a number and returns a list of its digits. So for 2342 it should return [2,3,4,2].
+
+
+def splitNumber(num):
+    global Mylist
+    Mylist=[]
+    for digit in range(0,len(num)):
+        Mylist.append(int(num[digit]))
+    print(Mylist)
+
+number=2468097531
+number=str(number)
+splitNumber(number)
