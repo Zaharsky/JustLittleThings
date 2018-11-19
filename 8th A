@@ -1,0 +1,22 @@
+# Implement the following sorting algorithms: Selection sort, Insertion sort, Merge sort, Quick sort, Stooge Sort.
+# Check Wikipedia for descriptions.
+
+def selectionSort(array):
+    for item in range(0,len(array)):
+        array.insert(item,array.pop(array.index(min(array[item:]))))
+    print(array)
+
+
+def insertionSort(array):
+    for item in range(1, len(array)):
+        for jtem in range(item, 0, -1):
+            if array[jtem] < array[jtem - 1]:
+                array.insert(jtem - 1, array.pop(jtem))
+            else:
+                break
+    print(array)
+
+
+myArray=[9,1,6,8,4,3,2,0]
+selectionSort(myArray)
+insertionSort(myArray)
