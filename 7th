@@ -1,0 +1,30 @@
+# Write functions that add, subtract, and multiply two numbers in their digit-list representation
+# (and return a new digit list). If you’re ambitious you can implement Karatsuba multiplication.
+# Try different bases. What is the best base if you care about speed?
+#  If you couldn’t completely solve the prime number exercise above due to the lack of large numbers in your language,
+#  you can now use your own library for this task.
+
+
+def calculate(list1,list2,operation):
+        global newList
+        newList=[]
+        if operation=="addition":
+            for item in range(0,len(list1)):
+                newList.append(list1[item]+list2[item])
+            print(newList)
+        elif operation=="subtract":
+            for item in range(0,len(list1)):
+                newList.append(list1[item]-list2[item])
+            print(newList)
+        elif operation=="multiplication":
+            for item in range(0,len(list1)):
+                newList.append(list1[item]*list2[item])
+            print(newList)
+        elif operation=="division":
+            for item in range(0,len(list1)):
+                newList.append(list1[item]/list2[item])
+            print(newList)
+
+Mylist1=[2,4,6]
+Mylist2=[5,7,9]
+calculate(Mylist1,Mylist2,"division")
