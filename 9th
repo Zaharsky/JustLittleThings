@@ -1,0 +1,31 @@
+# Write a function that takes a list of strings an prints them, one per line, in a rectangular frame.
+# For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+# *********
+# * Hello *
+# * World *
+# * in    *
+# * a     *
+# * frame *
+# *********
+
+myList=["Hello", "World", "in", "a", "frame"]
+total=0
+for item in myList:
+    if len(item)>total:
+        total=len(item)
+for item in range(0,len(myList)):
+    myList[item]=" "+myList[item]
+print(myList)
+total+=2
+for item in range(0,len(myList)):
+    myList[item] =myList[item].ljust(total)
+print(myList)
+total+=2
+for item in range(0,len(myList)):
+    myList[item] =myList[item].center(total,'*')
+print(myList)
+
+print("*"*total)
+for item in myList:
+    print(item)
+print("*"*total)
