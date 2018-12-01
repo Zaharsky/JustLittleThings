@@ -1,0 +1,16 @@
+# Implement binary search.
+
+def binarySearch(myList,x,left,right):
+    if left==right:
+        return print("Searched number has a #%d index in a pile" % (left))
+    i = int((left + right) / 2)
+    if x in myList[left:i+1]:
+        binarySearch(myArray, x, left, i)
+    else:
+        if right-i==1:
+            binarySearch(myArray, x, i+1, right)
+        else:
+            binarySearch(myArray, x, i, right)
+
+myArray=[15,84,33,-53,3,8,96,74,-32,44]
+binarySearch(myArray,8,0,9)
