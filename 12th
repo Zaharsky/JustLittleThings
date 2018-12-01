@@ -1,0 +1,36 @@
+#Write a function that takes a list of numbers, a starting base b1 and a target base b2 and interprets
+# the list as a number in base b1 and converts it into a number in base b2 (in the form of a list-of-digits).
+#  So for example [2,1,0] in base 3 gets converted to base 10 as [2,1].
+
+def decimal_to(myList,base):
+    myList_binary=[]
+    for item in range(0,len(myList)):
+        binary_list = []
+        while myList[item]>0:
+            binary_list.insert(0,myList[item]%base)
+            myList[item]//=base
+        binary_number=""
+        for num in binary_list:
+            binary_number+=str(num)
+        myList_binary.append(binary_number)
+    return myList_binary
+
+def to_decimal(myList,base):
+    import math
+    myList_decimal = []
+    for item in range(0, len(myList)):
+        myList[item]=str(myList[item])
+        sum=0
+        power=0
+        for num in range(len(myList[item])-1,-1,-1):
+            sum+=int(myList[num])*(math.pow(2,power))
+            power+=1
+        myList_decimal.append(int(sum))
+    print(myList_decimal)
+
+
+#UNCOMMENT LIST AND METHOD YOU WANT TO USE
+# myList=[28,3,24]
+#myList=[11100,101100]
+# print(decimal_to(myList,2))
+# to_decimal(myList,2)
