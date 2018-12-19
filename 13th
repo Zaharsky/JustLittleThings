@@ -1,0 +1,24 @@
+class Rectangle:
+    """
+    Utwórz klasę reprezentującą prostokąt,
+    musi posiadać atrybuty długość i szerokość.
+    Klasa powinna posiadać metody obliczające pole, obwód i długość przekątnej.
+    """
+    def __init__(self,lenght,width):
+        self.lenght=lenght
+        self.width=width
+
+# rozbudować pole o wielomiany, np 2a*3b=6ab
+    def getArea(self):
+        return self.lenght*self.width
+
+    def getCircumference(self):
+        return 2 * self.lenght + 2 * self.width
+
+    def getDiagonal(self):
+        import math
+        return math.sqrt(math.pow(self.lenght,2)+math.pow(self.width,2))
+
+fig1=Rectangle(12,5)
+diag= Rectangle.getDiagonal(fig1)
+print(diag)
