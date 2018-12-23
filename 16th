@@ -1,0 +1,28 @@
+# Write a program that automatically converts English text to Morse code and vice versa.
+
+def translateToMorse(word):
+    morseWord=''
+    for char in word.lower():
+        morseWord+=engMorse[char]
+    return print(morseWord)
+
+def translateToEng(word):
+    engWord=''
+    for char in word:
+        engWord+=morseEng[char]
+    return print(engWord)
+
+engMorse={'a':'.-', 'b':'-...', 'c':'-.-.', 'd':'-..', 'e':'.', 'f':'..-.', 'g':'--.', \
+          'h':'....', 'i':'..', 'j':'.---', 'k':'-.-', 'l':'.-..', 'm':'--', 'n':'-.', \
+          'o':'---', 'p':'.--.', 'q':'--.-', 'r':'.-.', 's':'...', 't':'-', 'u':'..-', \
+          'v':'...-', 'w':'.--', 'x':'-..-', 'y':'-.--', 'z':'--..'}
+
+#Swap: keys with values
+morseEng=dict((value,key) for key,value in engMorse.items())
+
+#Examples
+word= 'Letter'
+mword=['--', '.-', '-.-', '.-', '.-.', '---', '-.']
+
+translateToMorse(word)
+translateToEng(mword)
