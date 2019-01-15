@@ -1,0 +1,21 @@
+print ("Podaj w kolejnych linikach pierwszą liczbę, wykonywane działanie (+ - * /), drugą liczbę")
+firstNum = int(input(""))
+operation = (input(""))
+secondNum = int(input(""))
+
+
+if operation == "+":
+    score = firstNum + secondNum
+elif operation == "-":
+    score = firstNum - secondNum
+elif operation == "*":
+    score = firstNum * secondNum
+elif operation == "/":
+    score = firstNum / secondNum
+else:
+    print("Podano złe działanie")
+    import sys
+    sys.exit()
+
+print ("Działanie to: ", str(firstNum)+operation+str(secondNum))
+print ("Wynik to: ", score)
